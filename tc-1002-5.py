@@ -24,3 +24,41 @@ def graphPoints(X,y): #Grafica los puntos y los puntos proyectados
     plt.xlim(-1, 1)
     plt.ylim(-1, 1)
     plt.show()
+
+def drawVector(lv): #list of vectors
+    maxV = 0
+    colors = ['orange', 'darkorange', 'lime', 'darkcyan', 'indigo', 'purple', 'mediumspringgreen', 'deeppink']
+    for i in range(len(lv)):
+        v = lv[i]  
+        plt.quiver(0, 0, v[0], v[1], color=colors[i%len(colors)], angles='xy', scale_units='xy', scale=1)
+        if(max(v) > maxV):
+            maxV = max(v)
+    plt.xlim(-1, 1)
+    plt.ylim(-1, 1)
+    plt.show()
+
+def puntosProyectados(X,v):
+    listaPuntos = []
+    for i in X:
+        listaPuntos.append(projuv(i,v))
+    listaPuntos = np.array(listaPuntos)
+    return listaPuntos
+
+def crearVector():
+    v = np.array([random.random()-0.5, random.random()-0.5])
+    return v/la.norm(v)
+
+def projuv(u,v):
+    num = np.dot(u,v)
+    denom = la.norm(v)**2
+    return (num/denom)*v
+
+[X,y] = genData(200)
+
+graphPoints(X,y)
+
+for i in range(20):
+    v = crearVector()
+    drawVector([v])
+    Xp = puntosProyectados(X,v)
+    graphPoints(Xp,y)
