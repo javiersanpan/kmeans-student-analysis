@@ -35,7 +35,7 @@ def graphPoints(X,y): #Grafica los puntos y los puntos proyectados
     plt.ylim(-1, 1)
     plt.show()
 
-def createXClases(n,seed=1,m=False): #Modificar para crear dos tipos de puntos
+def createXClases(n,seed=1,m=False): # Crear dos tipos de puntos para clasificar
     if(m==False):
     	m= ((rr(20)+1)/10)**0.5
     X = np.random.random((n, 2))
@@ -44,7 +44,7 @@ def createXClases(n,seed=1,m=False): #Modificar para crear dos tipos de puntos
     y = [0,1,2,3,4,5]
     return [X,y]
 
-def distanceX1AndX2(X2,X):
+def distanceX1AndX2(X2,X): # Crear matriz con la distancia de cada punto al punto clasificador
     listDistance = np.zeros((len(X),len(X2)))
     for i in range(len(X2)):
         for j in range(len(X)):
@@ -52,13 +52,13 @@ def distanceX1AndX2(X2,X):
             listDistance[j][i] = distance
     return listDistance
 
-def distanceX1OrX2(yy,X,listDistanceX1AndX2):
+def distanceX1OrX2(yy,X,listDistanceX1AndX2): # Crear matriz con el punto clasificador mas cercano
     listClasification = np.zeros(len(X))
     for j in range(0,len(X)):
         listClasification[j] = posMayor(listDistanceX1AndX2[j],0,0,0)
     return listClasification
 
-def posMayor(listDistanceX1AndX2,j,i,posi):
+def posMayor(listDistanceX1AndX2,j,i,posi): # Regresa el tipo de punto clasificador al que pertenece dicho punto
     if (j == 0):
         return posMayor(listDistanceX1AndX2,j+1,listDistanceX1AndX2[0],0)
     elif ((j < len(listDistanceX1AndX2)) and (i > listDistanceX1AndX2[j])):
