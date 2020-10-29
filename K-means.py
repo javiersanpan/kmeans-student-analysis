@@ -25,40 +25,43 @@ def graphPoints(X,y): #Grafica los puntos y los puntos proyectados
     plt.ylim(-1, 1)
     plt.show()
 
-def drawVector(lv): #list of vectors
-    maxV = 0
-    colors = ['orange', 'darkorange', 'lime', 'darkcyan', 'indigo', 'purple', 'mediumspringgreen', 'deeppink']
-    for i in range(len(lv)):
-        v = lv[i]  
-        plt.quiver(0, 0, v[0], v[1], color=colors[i%len(colors)], angles='xy', scale_units='xy', scale=1)
-        if(max(v) > maxV):
-            maxV = max(v)
-    plt.xlim(-1, 1)
-    plt.ylim(-1, 1)
-    plt.show()
+def createXClases(n,seed=1,m=False): #Modificar para crear dos tipos de puntos
+    if(m==False):
+    	m= ((rr(20)+1)/10)**0.5
+    X = np.random.random((n, 2))
+    y = ((X[:,1]/X[:,0])>m)*1
+    X = (X-0.5)*2
+    return [X,y]
 
-def puntosProyectados(X,v):
-    listaPuntos = []
-    for i in X:
-        listaPuntos.append(projuv(i,v))
-    listaPuntos = np.array(listaPuntos)
-    return listaPuntos
+def distanceX1AndX2(X2,X):
+    listDistance = np.zeros((len(X),len(X2)))
+    for i in range(len(X2)):
+        for j in range(len(X)):
+            distance = ( (X2[i][0]-X[j][0])**2 + (X2[i][1]-X[j][1])**2 )**0.5
+            listDistance[j][i] = distance
+    return listDistance
 
-def crearVector():
+def distanceX1OrX2(yy,X,listdistanceX1AndX2):
+    i = 0
+    listClasification = np.zeros(len(X))
+    for j in range(0,len(X)):
+        if(listdistanceX1AndX2[j][i]>listdistanceX1AndX2[j][i+1]):
+            #listdistanceX1AndX2[j][i+1] = 0
+            listClasification[j] = 1  #Modificar de acuerdo al tipo de punto
+        else:
+            #listdistanceX1AndX2[j][i+1] = 1
+            listClasification[j] = 0  #Modificar de acuerdo al tipo de punto
+    return listClasification
+
+[X,y] = genData(20)
+graphPoints(X,y)
+
     v = np.array([random.random()-0.5, random.random()-0.5])
     return v/la.norm(v)
 
-def projuv(u,v):
-    num = np.dot(u,v)
-    denom = la.norm(v)**2
-    return (num/denom)*v
+listdistanceX1AndX2 = distanceX1AndX2(X2,X)
 
-[X,y] = genData(200)
+distanceX1OrX2 = distanceX1OrX2(X2,X,listdistanceX1AndX2)
 
-graphPoints(X,y)
+graphPoints(X,distanceX1OrX2)
 
-for i in range(20):
-    v = crearVector()
-    drawVector([v])
-    Xp = puntosProyectados(X,v)
-    graphPoints(Xp,y)
