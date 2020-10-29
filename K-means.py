@@ -56,8 +56,8 @@ def distanceX1OrX2(yy,X,listdistanceX1AndX2):
 [X,y] = genData(20)
 graphPoints(X,y)
 
-    v = np.array([random.random()-0.5, random.random()-0.5])
-    return v/la.norm(v)
+[X2,yy] = createXClases(2)
+graphPoints(X2,yy)
 
 listdistanceX1AndX2 = distanceX1AndX2(X2,X)
 
