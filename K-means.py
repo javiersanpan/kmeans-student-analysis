@@ -35,7 +35,8 @@ def graphPoints(X,y): #Grafica los puntos y los puntos proyectados
     plt.ylim(-1, 1)
     plt.show()
 
-def createXClases(n,seed=1,m=False): # Crear dos tipos de puntos para clasificar
+def createXClases(n,seed=2,m=False): # Crear dos tipos de puntos para clasificar
+    np.random.seed(seed)
     if(m==False):
     	m= ((rr(20)+1)/10)**0.5
     X = np.random.random((n, 2))
