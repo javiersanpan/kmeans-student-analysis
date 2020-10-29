@@ -89,6 +89,17 @@ def posMayor(listDistanceX1AndX2,j,i,posi): # Regresa el tipo de punto clasifica
     else:
         return posi
     
+def centroides(X,listClasificador,X2,yy):
+    XX = np.zeros((len(X2),2))
+    contador = np.zeros((len(X2),2))
+    for i in range(len(X2)):
+        for j in range(2):
+            for k in range(len(X)):
+                
+                if (int(listClasificador[k]) == int(i)):
+                    XX[i][j] = XX[i][j] + X[k][j]
+                    contador[i][j] += 1 
+    return [XX/contador,yy]
 
 [X,y] = genData(200)
 graphPoints(X,y)
@@ -103,5 +114,4 @@ listClasificador = clasificador(X2,X,listDistance)
 graphPoints(X,listClasificador)
 plt.show()
     
-
-
+sum(X[np.where(listClasificador==1)])/len(np.where(listClasificador==1)[0])
