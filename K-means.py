@@ -60,19 +60,31 @@ def centroides(X,listClasificador,yy): # Regresa los centroides con sus respecti
         XX[i] = (sum(X[np.where(listClasificador==i)])/len(np.where(listClasificador==i)[0]))
     return [XX,yy]
 
+
+def iniciar():
+    [X2,yy] = crearCentroides(5)
+    graphPoints(X2,yy,False)
+    
+    listDistance = distancias(X2,X)
+    listClasificador = clasificador(X2,X,listDistance)
+    graphPoints(X,listClasificador)
+    plt.show()
+    
+    run = True
+    while (run):
+        X2Viejo = X2
+        X2 = centroides(X,listClasificador,yy)
+        graphPoints(X2,yy,False)
+        listDistance = distancias(X2,X)
+        listClasificador = clasificador(X2,X,listDistance)
+        graphPoints(X,listClasificador)
+        plt.show()
+        
+        if (np.linalg.norm(X2Viejo) == np.linalg.norm(X2)):
+            run = False
+
 [X,y] = genData(200)
 graphPoints(X,y)
 plt.show()
-
-[X2,yy] = crearCentroides(5)
-graphPoints(X2,yy,False)
-
-listDistance = distancias(X2,X)
-
-listClasificador = clasificador(X2,X,listDistance)
-
-graphPoints(X,listClasificador)
-plt.show()
-    
-
+iniciar()
 
