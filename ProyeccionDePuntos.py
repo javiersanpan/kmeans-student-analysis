@@ -13,8 +13,6 @@ def genData(n,seed=1,m=False): #Genera data linearmente separable por una pendie
     X = (X-0.5)*2
     return [X,y]
 
-#HOLAHOLAHOLAMUNDOMUNDO
-
 def graphPoints(X,y): #Grafica los puntos y los puntos proyectados
     for i in range(0,X.shape[0]):
         p = X[i,0:2]
