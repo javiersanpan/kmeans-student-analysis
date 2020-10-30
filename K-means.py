@@ -3,6 +3,13 @@ import numpy.linalg as la
 import matplotlib.pyplot as plt
 from random import randrange as rr
 import random
+Import pandas as pd
+
+df = pd.read.csv("data.csv")
+data = df.values
+X = data[:,0:-1]
+n = len(X)
+Y = np.zeros(n)+50
 
 def genData(n,seed=1,m=False): #Genera data linearmente separable por una pendiente (m)
     np.random.seed(seed)
