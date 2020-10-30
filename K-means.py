@@ -149,7 +149,7 @@ def pronostico(X2,yy,X,listClasificador):
                 "Eres quien organiza al equipo (Divides las tareas, les recuerdas los tiempos de entrega, checas avances, tu frase es 'Mariana, son las 11:30 y todavía no mandas tu parte')",
                 "Eres quien pone el ambiente en el equipo (prestas la casa para el proyecto, las chelas, la música y los chistes)",
                 "Eres quien revisa que todo esté correcto en el proyecto (le das pasadas para encontrar faltas ortográficas, errores de redacción, cálculos mal hechos, Tu frase es '¿¿¿Quién hizo tu parte, un niño de kínder???')",
-                "Eres quien la verdad, no quería trabajar en equipo (mejor lo haces todo tú y pones el nombre de los demás, ¿no? Simios imbéciles)",
+                "Eres quien la verdad, no quería trabajar en equipo (mejor lo haces todo tú y pones el nombre de los demás, ¿no?)",
                 "Eres el del apoyo moral (la verdad no le sabes mucho, pero, igual ahí andas en la madrugada acompañando al que sí le sabe, 'Ay neta perdón por dejarte todo, te debo unos chetos')",
                 "Eres el/la fantasma del grupo (No contestas nunca y hasta que el proyecto está terminado preguntas '¿qué hace falta?')",]
     for i in range(7):
