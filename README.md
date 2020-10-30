@@ -25,7 +25,7 @@ Con un dataset brindado, se crea un programa para separar por clases la informac
 
 ## Proyecto
 
-Se hizo una encuesta con 7 preguntas sobre cargos de equipo diferentes, y hubo 115 participantes. Las personas que participaron contestaron la frecuencia con la que tomaban  cierto cargo en un a escala de 1 a 5. 
+Se hizo una encuesta con 7 preguntas sobre cargos de equipo diferentes, y hubo 115 participantes. Las personas que participaron contestaron la frecuencia con la que tomaban  cierto cargo en un a escala de 0 a 5. 
 
 Este dataset se lee con la librería de Pandas. 
 
