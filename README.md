@@ -22,9 +22,11 @@ Asimismo, se desarrolla el emprendimiento innovador, y la inovación.
 
 ## Objetivo del proyecto
 
-Se usó un dataset, con infomración recolectada a través de una encuesta. Este dataset nos indica qué tipo de compañerx de equipo es la persona que responde, con 7 tipos diferentes. 
+Se usó un dataset, ****insertar***
 
 ## Proyecto
+
+Se hizo una encuesta con 7 tipos de personas diferentes, en la que las personas que participaban decían que tanto pertenecían a cada clase en un ranking de 1 a 5. 
 
 Este dataset se lee con la librería de Pandas. 
 
@@ -37,11 +39,14 @@ Las graficas generadas son:
 ![MDS](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/MDS.jpeg)
 ![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA.jpeg)
 
-Y se seleccionó el **insertar seleccionada**, esto fue porque al intentar hacer la prueba con los tres, este es el que mostraba las clases de manera más clara, esto se puede observar cuando se separan por colores:
+Y se seleccionó el ***insertar seleccionada**, esto fue porque al intentar hacer la prueba con los tres, este es el que mostraba las clases de manera más clara, esto se puede observar cuando se separan por colores:
 
 
 ![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA-C.jpeg)
 ![ISOMAP](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/ISOMAP-C.png)
+
+*Se omite MDS porque existe un error al dividir entre 0.*
+
 
 Adicionalmente, se programó el kmeans, y se grafican los puntos y los centroides en cada interacción, y de esta manera se ve como evoluciona la posición de estos centroides. 
 
