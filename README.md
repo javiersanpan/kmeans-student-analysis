@@ -46,6 +46,5 @@ Y se seleccionó el ***insertar seleccionada**, esto fue porque al intentar hace
 
 *Se omite MDS porque existe un error al dividir entre 0.*
 
-
 Adicionalmente, se programó el kmeans, y se grafican los puntos y los centroides en cada interacción, y de esta manera se ve como evoluciona la posición de estos centroides. 
 
