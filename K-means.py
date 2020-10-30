@@ -152,9 +152,8 @@ def pronostico(X2,yy,X,listClasificador):
                 "Eres quien la verdad, no quería trabajar en equipo (mejor lo haces todo tú y pones el nombre de los demás, ¿no? Simios imbéciles)",
                 "Eres el del apoyo moral (la verdad no le sabes mucho, pero, igual ahí andas en la madrugada acompañando al que sí le sabe, 'Ay neta perdón por dejarte todo, te debo unos chetos')",
                 "Eres el/la fantasma del grupo (No contestas nunca y hasta que el proyecto está terminado preguntas '¿qué hace falta?')",]
-    print("Del 0 al 5, qué tan seguido: ")
     for i in range(7):
-        X3[0][i] = int(input(pregunta[i] + "\nRespuesta " + str(i+1) + ": "))
+        X3[0][i] = int(input("Del 0 al 5, qué tan seguido:\n" + pregunta[i] + "\n\nRespuesta " + str(i+1) + ": "))
     
     #X3t=reduccion(X3)
     X3t = emb.transform(X3)
