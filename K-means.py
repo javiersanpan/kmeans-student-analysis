@@ -38,19 +38,19 @@ def distancias(X2,X): # Crear matriz con la distancia de cada punto al punto cla
             listDistance[j][i] = distance
     return listDistance
 
-def clasificador(yy,X,listDistanceX1AndX2): # Crear matriz con el punto clasificador mas cercano
+def clasificador(yy,X,listDistanceX1AndX2): # Crear matriz con el tipo de punto clasificador mas cercano
     listClasification = np.zeros(len(X))
     for j in range(0,len(X)):
-        listClasification[j] = posMayor(listDistanceX1AndX2[j],0,0,0)
+        listClasification[j] = posMenor(listDistanceX1AndX2[j],0,0,0)
     return listClasification
 
-def posMayor(listDistanceX1AndX2,j,i,posi): # Regresa el tipo de punto clasificador al que pertenece dicho punto
+def posMenor(listDistanceX1AndX2,j,i,posi): # Regresa el tipo de punto al que pertenece dicho punto
     if (j == 0):
-        return posMayor(listDistanceX1AndX2,j+1,listDistanceX1AndX2[0],0)
+        return posMenor(listDistanceX1AndX2,j+1,listDistanceX1AndX2[0],0)
     elif ((j < len(listDistanceX1AndX2)) and (i > listDistanceX1AndX2[j])):
-        return posMayor(listDistanceX1AndX2,j+1,listDistanceX1AndX2[j],j)
+        return posMenor(listDistanceX1AndX2,j+1,listDistanceX1AndX2[j],j)
     elif (j < len(listDistanceX1AndX2)):
-         return posMayor(listDistanceX1AndX2,j+1,i,posi)
+         return posMenor(listDistanceX1AndX2,j+1,i,posi)
     else:
         return posi
     
@@ -58,21 +58,31 @@ def centroides(X,listClasificador,yy): # Regresa los centroides con sus respecti
     XX = np.zeros((len(yy),2))
     for i in range(len(yy)):
         XX[i] = (sum(X[np.where(listClasificador==i)])/len(np.where(listClasificador==i)[0]))
-    return [XX,yy]
+    return XX
 
+def iniciar():
+    [X2,yy] = crearCentroides(5)
+    graphPoints(X2,yy,False)
+    
+    listDistance = distancias(X2,X)
+    listClasificador = clasificador(X2,X,listDistance)
+    graphPoints(X,listClasificador)
+    plt.show()
+    
+    run = True
+    while (run):
+        X2Viejo = X2
+        X2 = centroides(X,listClasificador,yy)
+        graphPoints(X2,yy,False)
+        listDistance = distancias(X2,X)
+        listClasificador = clasificador(X2,X,listDistance)
+        graphPoints(X,listClasificador)
+        plt.show()
+        
+        if (np.linalg.norm(X2Viejo) == np.linalg.norm(X2)):
+            run = False
+            
 [X,y] = genData(200)
 graphPoints(X,y)
 plt.show()
-
-[X2,yy] = crearCentroides(5)
-graphPoints(X2,yy,False)
-
-listDistance = distancias(X2,X)
-
-listClasificador = clasificador(X2,X,listDistance)
-
-graphPoints(X,listClasificador)
-plt.show()
-    
-
-
+iniciar()
