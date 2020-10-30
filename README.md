@@ -21,7 +21,7 @@ Esta semana Tec está diesñada para desarrollar el análisis de datos en ingeni
 
 ## Objetivo del proyecto
 
-Con un dataset brindado, se crea un programa para separar por clases la información, y predecir a cuál pertenecenecerá una persona que responda de nuevo la encuesta. En este proyecto se utiliza un dataset generado por el equipo a través de encuestas, y se determinará qué tipo de participante en un equipo es una persona nueva. 
+Con un dataset brindado, se crea un programa para separar por clases la información, y predecir a cuál pertenecenecerá una persona que responda de nuevo la encuesta. En este proyecto se utiliza un dataset generado por el equipo a través de encuestas, y se pronosticará qué tipo de participante en un equipo es una persona nueva. 
 
 ## Proyecto
 
@@ -47,9 +47,11 @@ Y se seleccionó ISOMAP, esto fue porque al intentar hacer la prueba con los tre
 
 Adicionalmente, se programó el kmeans, y se grafican los puntos y los centroides en cada interacción, y de esta manera se ve como evoluciona la posición de estos centroides. 
 
+Demostración de un pronóstico hecho con el algoritmo:
+
 Cosas que se tienen que hacer todavía:
-- Elbow
 - Explicar kmeans
+- Prueba del pronóstico
 
 Cosas que se tienen que arreglar al hacer el merge:
 - Quitar esta sección
