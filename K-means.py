@@ -138,7 +138,19 @@ def KMeans2D(k):
         
         if (np.linalg.norm(X2Viejo) == np.linalg.norm(X2)):
             run = False
+         
+def nuevoDato(X,X2): 
+    #np.append(X, [[0, 0, 0, 0, 0, 0, 0]])
+    for i in range(7):
+        X[-1][i] = int(input("Respuesta "+str(i+1) + ": "))
 
+    emb = Isomap(n_components=2)
+    X3t = emb.fit_transform(X)
+
+ 
+    X = X3t[-1]
+    
+    distancias(X)
 
 df = pd.read_csv("data.csv")
 data = df.values
@@ -146,7 +158,11 @@ X = data[:,0:]
 y = np.zeros((len(X)))
 
 X=reduccion(X)
+
 obtenerK(X)
-K= silhouette(X)
+K = silhouette(X)
 #print("K = ",K) 
 KMeans2D(K)
+    
+#print(nuevoDato(data[:,0:],X))
+
