@@ -31,3 +31,5 @@ Se divide en matriz de caractéristicas y vector de clases. Con esto, se probaro
 ~~ Argumentar aquí por qué se utilizó ese ~~
 
 Adicionalmente, se programó el kmeans, y se grafican los puntos y los centroides en cada interacción, y de esta manera se ve como evoluciona la posición de estos centroides. 
+
+![Imagen de prueba](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/Isomap.jpeg)
