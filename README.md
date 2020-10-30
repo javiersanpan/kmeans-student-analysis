@@ -17,7 +17,7 @@ Saucedo Cruz José Rodrigo (SauceRSC)
 
 ## Objetivo de la clase
 
-Esta semana Tec está diesñada para desarrollar el análisis de datos en ingeniería y ciencias, así como la identificación de variables. Asimismo, se desarrolla el emprendimiento innovador, y la inovación. 
+Esta semana Tec está diseñada para desarrollar el análisis de datos en ingeniería y ciencias, así como la identificación de variables. Asimismo, se desarrolla el emprendimiento innovador, y la inovación. 
 
 ## Objetivo del proyecto
 
@@ -25,11 +25,11 @@ Con un dataset brindado, se crea un programa para separar por clases la informac
 
 ## Proyecto
 
-Se hizo una encuesta con 7 tipos de personas diferentes, y hubo 115 participantes. Las personas que participaban decían que tanto pertenecían a cada tipo de integrante en un a escala de 1 a 5. 
+Se hizo una encuesta con 7 preguntas sobre cargos de equipo diferentes, y hubo 115 participantes. Las personas que participaron contestaron la frecuencia con la que tomaban  cierto cargo en un a escala de 1 a 5. 
 
 Este dataset se lee con la librería de Pandas. 
 
-Se divide en matriz de caractéristicas y vector de clases. Con esto, se probaron varios métodos de reducción de dimensiones, y se generan graficas con cada uno de ellos. 
+Se divide en matriz de caractéristicas. Con esto, se probaron varios métodos de reducción de dimensiones, y se generan graficas con cada uno de ellos. 
 
 Las graficas generadas son: 
 
