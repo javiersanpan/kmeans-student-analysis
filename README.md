@@ -41,7 +41,7 @@ Las graficas generadas son:
 
 Y se seleccionó ISOMAP, esto fue porque al intentar hacer la prueba con los tres, este es el que mostraba las clases de manera más clara, también se omite MDS, ya que se presenta un error al intentar dividir por 0.
 
-![ISOMAP](https://github.com/javiersanpan/TC-1002-5/blob/readme/Imagenes/ISOMAP-C.png)
+![ISOMAP](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/ISOMAP-C.png)
 
 ![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA-C.jpeg)
 
@@ -49,12 +49,14 @@ Adicionalmente, se programó el kmeans, y se grafican los puntos y los centroide
 
 K-means es un método de agrupamiento, que hace partición del conjunto de observaciones, en k número de grupos. Cada observación pertenece al grupo cuyo valor medio es más cercano. 
 
+## Cómo usar
+
+1. Corre el script k-means.py
+2. Llama a la función `llamarPronostico()`
+3. Responde las preguntas que se piden
+
 ### Demostración de un pronóstico hecho con el algoritmo
 
-Cosas que se tienen que hacer todavía:
+Aquí se muestra como el programa corre al llamarlo. Hace 7 preguntas, y hace un pronostico posicionando a la persona que responde en la gráfica. 
 
-- Prueba del pronóstico
-
-Cosas que se tienen que arreglar al hacer el merge:
-- Quitar esta sección
-- Reparar el path de las imagenes
+![Prueba](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/test-hecho.png)
