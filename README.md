@@ -45,12 +45,14 @@ Y se seleccionó ISOMAP, esto fue porque al intentar hacer la prueba con los tre
 
 ![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA-C.jpeg)
 
-Adicionalmente, se programó el kmeans, y se grafican los puntos y los centroides en cada interacción, y de esta manera se ve como evoluciona la posición de estos centroides. 
+Adicionalmente, se programó el kmeans, y se grafican los puntos y los centroides en cada interacción, y de esta manera se ve como evoluciona la posición de estos centroides hasta que llega la medio definitivo. 
 
-Demostración de un pronóstico hecho con el algoritmo:
+K-means es un método de agrupamiento, que hace partición del conjunto de observaciones, en k número de grupos. Cada observación pertenece al grupo cuyo valor medio es más cercano. 
+
+### Demostración de un pronóstico hecho con el algoritmo
 
 Cosas que se tienen que hacer todavía:
-- Explicar kmeans
+
 - Prueba del pronóstico
 
 Cosas que se tienen que arreglar al hacer el merge:
