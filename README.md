@@ -9,7 +9,7 @@ Gutierrez Aldrete José de Jesús (ShoyChoy)
 
 López Cruz Diana Sareli (dianasareli)
 
-Ojeda Angulo Carlos Noel (Carlos-Ojeda)
+Ojeda Angulo Carlos Noel (Carlos-Ojeda) *También se le atribuye lo que está a nombre de Carlos sin cuenta de GitHub*
 
 Sánchez Panduro Francisco Javier (javiersanpan)
 
