@@ -37,7 +37,11 @@ Las graficas generadas son:
 ![MDS](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/MDS.jpeg)
 ![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA.jpeg)
 
-Y se seleccionó el PCA, esto fue porque al intentar hacer la prueba con los tres, este es el que mostraba las clases de manera más clara, esto se puede observar aquí:
+Y se seleccionó el **insertar seleccionada**, esto fue porque al intentar hacer la prueba con los tres, este es el que mostraba las clases de manera más clara, esto se puede observar cuando se separan por colores:
+
+
+![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA-C.jpeg)
+![ISOMAP](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/ISOMAP-C.jpeg)
 
 Adicionalmente, se programó el kmeans, y se grafican los puntos y los centroides en cada interacción, y de esta manera se ve como evoluciona la posición de estos centroides. 
 
