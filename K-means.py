@@ -7,10 +7,20 @@ from sklearn.manifold import MDS
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_samples, silhouette_score
+import numpy as np
+from sklearn.datasets import load_digits
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+import umap
 
 #Se hace la reduccion de 7D a 2D
 def reduccion(X):
-
+    X3t = umap.UMAP(X)
+    return X3t
+'''
     pca = PCA(n_components=2)
     X1t = pca.fit_transform(X)
     
@@ -30,8 +40,7 @@ def reduccion(X):
     plt.scatter(X3t[:,0],X3t[:,1])
     plt.title('Alumnos dataset, Isomap ')
     plt.show()
-    
-    return X3t
+    '''
 
 #Se determina K, el numero de clases, mediante Silhouette
 def silhouette(X):
