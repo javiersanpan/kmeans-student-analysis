@@ -41,7 +41,7 @@ Las graficas generadas son:
 
 Y se seleccionó ISOMAP, esto fue porque al intentar hacer la prueba con los tres, este es el que mostraba las clases de manera más clara, también se omite MDS, ya que se presenta un error al intentar dividir por 0.
 
-![ISOMAP](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/ISOMAP-C.png)
+![ISOMAP](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/ISOMAP-C.jpeg)
 
 ![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA-C.jpeg)
 
