@@ -36,12 +36,15 @@ Las graficas generadas son:
 
 
 ![Isomap](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/Isomap.jpeg)
+
 ![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA.jpeg)
+
 ![MDS](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/MDS.jpeg)
 
 Y se seleccionó el ***insertar seleccionada**, esto fue porque al intentar hacer la prueba con los tres, este es el que mostraba las clases de manera más clara, esto se puede observar cuando se separan por colores:
 
-![ISOMAP](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/ISOMAP-C.png)
+![ISOMAP](https://github.com/javiersanpan/TC-1002-5/blob/readme/Imagenes/ISOMAP-C.png)
+
 ![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA-C.jpeg)
 
 *Se omite MDS porque existe un error al dividir entre 0.*
