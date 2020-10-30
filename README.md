@@ -41,7 +41,7 @@ Y se seleccionó el **insertar seleccionada**, esto fue porque al intentar hacer
 
 
 ![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA-C.jpeg)
-![ISOMAP ](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/ISOMAP-C.jpeg)
+![ISOMAP](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/ISOMAP-C.png)
 
 Adicionalmente, se programó el kmeans, y se grafican los puntos y los centroides en cada interacción, y de esta manera se ve como evoluciona la posición de estos centroides. 
 
