@@ -66,9 +66,11 @@ def obtenerK(X):
     plt.show()
 
 #Grafica los puntos y los puntos proyectados
-def graphPoints(X,y,centroide=True): 
+def graphPoints(X,y,centroide=True,pronostico=True): 
     if(centroide):
         plt.scatter(X[:,0],X[:,1],c=y)
+    elif(not(centroide) and not(pronostico)):
+        plt.scatter(X[:,0],X[:,1],c=y,marker='2', s=200)
     else:
         plt.scatter(X[:,0],X[:,1],c=y,marker='x', s=200)
 
@@ -138,19 +140,38 @@ def KMeans2D(k):
         
         if (np.linalg.norm(X2Viejo) == np.linalg.norm(X2)):
             run = False
-         
-def nuevoDato(X,X2): 
-    #np.append(X, [[0, 0, 0, 0, 0, 0, 0]])
-    for i in range(7):
-        X[-1][i] = int(input("Respuesta "+str(i+1) + ": "))
-
-    emb = Isomap(n_components=2)
-    X3t = emb.fit_transform(X)
-
- 
-    X = X3t[-1]
+    return [X2,yy,X,listClasificador]
+def pronostico(X2,yy,X,listClasificador):
     
-    distancias(X)
+    X3 =  [[0, 4, 3, 1, 3, 1, 0],
+       [1, 2, 3, 4, 1, 2, 3],
+       [2, 3, 4, 1, 2, 3, 4],
+       [4, 3, 2, 1, 4, 3, 0],
+       [0, 3, 5, 4, 3, 5, 4],
+       [0, 4, 3, 1, 3, 1, 0]]
+    
+    #X3t=reduccion(X3)
+    emb = Isomap(n_components=2)
+    X3t = emb.fit_transform(X3)
+    
+    listDistance = distancias(X2,X3t)
+    listClase = clasificador(yy, X3t,listDistance)
+   
+    #print(listDistance)
+    #print(X3t)
+    #print(listClase)
+    graphPoints(X3t,listClase,False,False)
+    
+    #print(X)
+    #print(listClasificador)
+    graphPoints(X,listClasificador)
+
+    #print(X2)
+    #print(yy)
+    graphPoints(X2,yy,False)
+    
+    plt.show()
+    
 
 df = pd.read_csv("data.csv")
 data = df.values
@@ -158,11 +179,11 @@ X = data[:,0:]
 y = np.zeros((len(X)))
 
 X=reduccion(X)
-
 obtenerK(X)
-K = silhouette(X)
+K= silhouette(X)
 #print("K = ",K) 
-KMeans2D(K)
-    
-#print(nuevoDato(data[:,0:],X))
+[X2,yy,X,listClasificador] = KMeans2D(K)
 
+#pronostico(X2,yy,X,listClasificador)
+
+    
