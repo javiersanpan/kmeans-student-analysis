@@ -11,15 +11,12 @@ from sklearn.metrics import silhouette_samples, silhouette_score
 #Se hace la reduccion de 7D a 2D
 def reduccion(X):
 
-    pca = PCA(n_components=2)
     X1t = pca.fit_transform(X)
     
     #Por alguna razon cambia en cada iteracion, por lo que no lo consideramos confiable
-    emb = MDS(n_components=2)
-    X2t = emb.fit_transform(X)
+    X2t = emb1.fit_transform(X)
     
-    emb = Isomap(n_components=2)
-    X3t = emb.fit_transform(X)
+    X3t = emb.transform(X)
     
     plt.scatter(X1t[:,0],X1t[:,1])
     plt.title('Alumnos dataset, PCA ')
@@ -50,7 +47,7 @@ def silhouette(X):
         
         #Para imprimir el score para cada K y ver cual es el mas alto
         #print("For n_clusters =", n_clusters,"The average silhouette_score is :", silhouette_avg)
-        sample_silhouette_values = silhouette_samples(X, cluster_labels)
+        #sample_silhouette_values = silhouette_samples(X, cluster_labels)
     
     return k
 
@@ -66,11 +63,15 @@ def obtenerK(X):
     plt.show()
 
 #Grafica los puntos y los puntos proyectados
-def graphPoints(X,y,centroide=True,pronostico=True): 
+def ntoc(n):
+    color =  ["purple","#248f90","yellow"]
+    return color[n]
+
+def graphPoints(X,y,centroide=True,pronostico=True):
     if(centroide):
         plt.scatter(X[:,0],X[:,1],c=y)
     elif(not(centroide) and not(pronostico)):
-        plt.scatter(X[:,0],X[:,1],c=y,marker='2', s=200)
+        plt.scatter(X[-1,0],X[-1,1],c=y,marker='2', s=400)
     else:
         plt.scatter(X[:,0],X[:,1],c=y,marker='x', s=200)
 
@@ -141,49 +142,47 @@ def KMeans2D(k):
         if (np.linalg.norm(X2Viejo) == np.linalg.norm(X2)):
             run = False
     return [X2,yy,X,listClasificador]
+
 def pronostico(X2,yy,X,listClasificador):
-    
-    X3 =  [[0, 4, 3, 1, 3, 1, 0],
-       [1, 2, 3, 4, 1, 2, 3],
-       [2, 3, 4, 1, 2, 3, 4],
-       [4, 3, 2, 1, 4, 3, 0],
-       [0, 3, 5, 4, 3, 5, 4],
-       [0, 4, 3, 1, 3, 1, 0]]
+    X3 =  [[0, 0, 0, 0, 0, 0, 0]]
+    pregunta = ["Eres quien hace bonito el proyecto. (Haces el lettering del título, estilizas el póster en canva, te encargas de la estética de las diapositivas)",
+                "Eres quien organiza al equipo (Divides las tareas, les recuerdas los tiempos de entrega, checas avances, tu frase es 'Mariana, son las 11:30 y todavía no mandas tu parte')",
+                "Eres quien pone el ambiente en el equipo (prestas la casa para el proyecto, las chelas, la música y los chistes)",
+                "Eres quien revisa que todo esté correcto en el proyecto (le das pasadas para encontrar faltas ortográficas, errores de redacción, cálculos mal hechos, Tu frase es '¿¿¿Quién hizo tu parte, un niño de kínder???')",
+                "Eres quien la verdad, no quería trabajar en equipo (mejor lo haces todo tú y pones el nombre de los demás, ¿no? Simios imbéciles)",
+                "Eres el del apoyo moral (la verdad no le sabes mucho, pero, igual ahí andas en la madrugada acompañando al que sí le sabe, 'Ay neta perdón por dejarte todo, te debo unos chetos')",
+                "Eres el/la fantasma del grupo (No contestas nunca y hasta que el proyecto está terminado preguntas '¿qué hace falta?')",]
+    print("Del 0 al 5, qué tan seguido: ")
+    for i in range(7):
+        X3[0][i] = int(input(pregunta[i] + "\nRespuesta " + str(i+1) + ": "))
     
     #X3t=reduccion(X3)
-    emb = Isomap(n_components=2)
-    X3t = emb.fit_transform(X3)
+    X3t = emb.transform(X3)
     
     listDistance = distancias(X2,X3t)
     listClase = clasificador(yy, X3t,listDistance)
-   
-    #print(listDistance)
-    #print(X3t)
-    #print(listClase)
-    graphPoints(X3t,listClase,False,False)
     
-    #print(X)
-    #print(listClasificador)
+    graphPoints(X3t,ntoc(int(listClase)),False,False)
     graphPoints(X,listClasificador)
-
-    #print(X2)
-    #print(yy)
-    graphPoints(X2,yy,False)
-    
+    graphPoints(X2,yy,False)    
     plt.show()
-    
+
+def llamarPronostico():
+    pronostico(X2,yy,X,listClasificador)
 
 df = pd.read_csv("data.csv")
 data = df.values
 X = data[:,0:]
 y = np.zeros((len(X)))
 
+pca = PCA(n_components=2)
+emb1 = MDS(n_components=2)
+emb = Isomap(n_components=2)
+emb.fit(X)
 X=reduccion(X)
+
 obtenerK(X)
 K= silhouette(X)
 #print("K = ",K) 
 [X2,yy,X,listClasificador] = KMeans2D(K)
-
-#pronostico(X2,yy,X,listClasificador)
-
     
