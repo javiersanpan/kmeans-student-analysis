@@ -31,11 +31,13 @@ Este dataset se lee con la librería de Pandas.
 Se divide en matriz de caractéristicas y vector de clases. Con esto, se probaron varios métodos de reducción de dimensiones, y se generan graficas con cada uno de ellos. 
 
 Las graficas generadas son: 
+
+
 ![Isomap](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/Isomap.jpeg)
 ![MDS](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/MDS.jpeg)
-![PSA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PSA.jpeg)
+![PCA](https://github.com/javiersanpan/TC-1002-5/blob/master/Imagenes/PCA.jpeg)
 
-~~Argumentar aquí por qué se utilizó ese~~
+Y se seleccionó el PCA, esto fue porque al intentar hacer la prueba con los tres, este es el que mostraba las clases de manera más clara, esto se puede observar aquí:
 
 Adicionalmente, se programó el kmeans, y se grafican los puntos y los centroides en cada interacción, y de esta manera se ve como evoluciona la posición de estos centroides. 
 
