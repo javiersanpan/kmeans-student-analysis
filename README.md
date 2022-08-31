@@ -1,19 +1,11 @@
-# TC-1002-5
-
 # Proyecto final de Herramientas computacionales: el arte de la anlítica
 
 ## Integrantes del grupo 5
-*En orden alfabético*
-
-Gutierrez Aldrete José de Jesús (ShoyChoy)
-
-López Cruz Diana Sareli (dianasareli)
-
-Ojeda Angulo Carlos Noel (Carlos-Ojeda) *También se le atribuye lo que está a nombre de Carlos sin cuenta de GitHub*
-
-Sánchez Panduro Francisco Javier (javiersanpan)
-
-Saucedo Cruz José Rodrigo (SauceRSC)
+- Gutierrez Aldrete José de Jesús (ShoyChoy)
+- López Cruz Diana Sareli (dianasareli)
+- Ojeda Angulo Carlos Noel (Carlos-Ojeda)
+- Sánchez Panduro Francisco Javier (javiersanpan)
+- Saucedo Cruz José Rodrigo (SauceRSC)
 
 ## Objetivo de la clase
 
